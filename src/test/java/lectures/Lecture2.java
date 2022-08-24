@@ -16,6 +16,10 @@ public class Lecture2 {
   @Test
   public void rangeIteratingLists() throws Exception {
     List<Person> people = MockData.getPeople();
+    IntStream.rangeClosed(1, people.size())
+            .filter(index -> people.get(index).getAge() <= 18)
+            .limit(10)
+            .forEach(System.out::println);
 
   }
 
